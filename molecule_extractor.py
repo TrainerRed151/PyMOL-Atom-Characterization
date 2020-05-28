@@ -1,4 +1,5 @@
-# Copyright © 2020 Brian Pomerantz. All Rights Reserved.
+# Copyright © 2020 Brian Pomerantz
+
 
 import sys
 
