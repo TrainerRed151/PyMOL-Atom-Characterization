@@ -7,7 +7,7 @@ Characterizes the information for chains within a selection.  Displays the chain
 - python3
 
 ## Example
-Export the selection as `cif` file, and then run:
+Export the selection as a `cif` file, and then run:
 ```
 python3 molecule_extractor.py [cif file of selection]
 ```
