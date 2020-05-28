@@ -14,7 +14,7 @@ def chain_name():
     f.close()
 
     for line in lines:
-        ll = line.split(',')
+        ll = line.strip().split(',')
         name_dict[ll[1]] = ll[0]
 
     return name_dict
