@@ -4,10 +4,28 @@
 import sys
 
 
+def chain_name():
+    name_dict = {}
+    if len(sys.argv) < 3:
+        return None
+
+    f = open(sys.argv[2], 'r')
+    lines = f.readlines()
+    f.close()
+
+    for line in lines:
+        ll = line.split(',')
+        name_dict[ll[1]] = ll[0]
+
+    return name_dict
+
+
 def main():
     f = open(sys.argv[1], 'r')
     lines = f.readlines()
     f.close()
+
+    chain_name_dict = chain_name()
 
     data = {}
     for line in lines:
@@ -24,7 +42,10 @@ def main():
     for d in data:
         ll_out = list(data[d][0])
         ll_out.sort()
-        print(f'{d}:\t{len(ll_out)}\t', end='')
+        if chain_name_dict is None:
+            print(f'{d}:\t{len(ll_out)}\t', end='')
+        else:
+            print(f'{chain_name_dict[d]}:\t{len(ll_out)}\t', end='')
         if data[d][1]:
             previous = -10
             in_dash = False
